@@ -12,5 +12,7 @@ export class UserTasksComponent {
 
   private userService = inject(UsersService);
 
-  userName = computed(() => this.userService.users.find(user => user.id === this.userId())?.name);
+  userName = computed(
+    () => this.userService.users.find((user) => user.id === this.userId())?.name
+  );
 }
