@@ -9,7 +9,7 @@ const dummyCanMatch: CanMatchFn = (route, segments) => {
   const router = inject(Router);
   const shouldGetAccess = Math.random();
   // const shouldGetAccess = 0;
-  if (shouldGetAccess < 0.5) {
+  if (shouldGetAccess < 1) {
     return true;
   }
   return new RedirectCommand(router.parseUrl('/unauthorized'));
