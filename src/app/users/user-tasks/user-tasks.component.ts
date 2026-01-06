@@ -31,8 +31,8 @@ export class UserTasksComponent implements OnInit {
 }
 
 export const resolveUserName: ResolveFn<string> = (
-  activatedRouteSnapshot: ActivatedRouteSnapshot,
-  routerState: RouterStateSnapshot
+  activatedRouteSnapshot,
+  routerState
 ) => {
   const userService = inject(UsersService);
   const userName =
@@ -42,3 +42,7 @@ export const resolveUserName: ResolveFn<string> = (
 
   return userName;
 };
+
+export const resolveTitle: ResolveFn<string> = (activatedRouteSnapshot, routerState) => {
+    return resolveUserName(activatedRouteSnapshot, routerState) + '\'s Tasks';
+}
